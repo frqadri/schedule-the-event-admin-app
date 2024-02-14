@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="Primary_Purple">#B400FF</color>
+    <color name="Pink_schoking">#FF00CB</color>
+    <color name="Blue">#3400FF</color>
+    <color name="lightGray">#c1c1c1</color>
+    <color name="Text_Full_Black">#000000</color>
+    <color name="Text_light_gray">#646464</color>
+    <color name="Heading">#B400FF</color>
+</resources>

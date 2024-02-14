@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.Material3.Light.NoActionBar"
+    tools:context=".Hall_Information_Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/maina_activity_top_background"
+            android:paddingStart="10dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="70dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/img_back_icon"
+                    android:layout_width="40dp"
+                    android:layout_height="55dp"
+                    android:src="@drawable/ic_back" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/helveticaworld_bold"
+                        android:gravity="center"
+                        android:text="Admin Portal"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:src="@drawable/menu"
+                app:tint="@color/white" />
+
+            <ImageButton
+                android:id="@+id/btn_go_to_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="40dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_home"
+                app:tint="@color/white" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/hall_information"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/home_txt_background"
+                android:gravity="center"
+                android:text="Hall Information"
+                android:textAlignment="center"
+                android:textColor="@color/Text_Full_Black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycleView_images"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <Button
+                android:id="@+id/btn_Select_images"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:elevation="5dp"
+                android:text="Select Images" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tf_hall_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Hall Name:"
+                app:endIconMode="clear_text"
+                app:hintEnabled="true"
+                app:placeholderText="Enter Full Name of the place..."
+                app:placeholderTextAppearance="@color/Text_light_gray">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_hall_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/Text_Full_Black"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tf_description"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Hall Description:"
+                app:hintEnabled="true"
+                app:placeholderText="Hall description that represent your business..."
+                app:placeholderTextAppearance="@color/Text_light_gray">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:maxLines="5"
+                    android:minLines="1"
+                    android:scrollbarAlwaysDrawVerticalTrack="true"
+                    android:scrollbars="vertical"
+                    android:scrollHorizontally="false"
+                    android:textColor="@color/Text_Full_Black"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tf_category"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Hall Category:"
+                app:hintEnabled="true">
+
+                <AutoCompleteTextView
+                    android:id="@+id/et_hall_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tf_address"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Address:"
+                app:hintEnabled="true"
+                app:placeholderText="Enter full address..."
+                app:placeholderTextAppearance="@color/Text_light_gray">>
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:maxLength="2000"
+                    android:maxLines="3"
+                    android:minLines="1"
+                    android:scrollbarAlwaysDrawVerticalTrack="true"
+                    android:scrollbars="vertical"
+                    android:scrollHorizontally="false"
+                    android:textColor="@color/Text_light_gray"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tf_city"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="City:"
+                app:endIconMode="clear_text"
+                app:hintEnabled="true"
+                app:placeholderText="Enter your city name..."
+                app:placeholderTextAppearance="@color/Text_light_gray">>
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/Text_light_gray"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tf_divisions"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Division:"
+                app:endIconMode="clear_text"
+                app:hintEnabled="true"
+                app:placeholderText="Enter your division name..."
+                app:placeholderTextAppearance="@color/Text_light_gray">>
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_divisions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/Text_light_gray"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tf_phone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Phone:"
+                app:endIconMode="clear_text"
+                app:hintEnabled="true"
+                app:placeholderText=" 3081044442 | Enter Business phone number..."
+                app:placeholderTextAppearance="@color/Text_light_gray"
+                app:prefixText="+92"
+                app:prefixTextColor="@color/Primary_Purple">>
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:textColor="@color/Text_light_gray"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tf_hall_capacity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Hall Capacity:"
+                app:hintEnabled="true"
+                app:placeholderText="Hall's Capacity..."
+                app:placeholderTextAppearance="@color/Text_light_gray"
+                app:prefixTextColor="@color/Primary_Purple"
+                app:suffixText="Persons">>
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_hall_capacity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:textColor="@color/Text_light_gray"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tf_parking_capacity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Car Parking Capacity:"
+                app:hintEnabled="true"
+                app:placeholderText="Car parking space..."
+                app:placeholderTextAppearance="@color/Text_light_gray"
+                app:prefixTextColor="@color/Primary_Purple">>
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_parking_capacity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:textColor="@color/Text_light_gray"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btn_submit_hall_info"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:elevation="10dp"
+                android:text="Submit" />
+
+            <Button
+                android:id="@+id/btn_update_hall_info"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="10dp"
+                android:text="Update" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
